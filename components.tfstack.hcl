@@ -1,17 +1,13 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
 
-component "s3" {
-  for_each = var.regions
-
-  source = "./s3"
+component "ssm" {
+  source = "./ssm"
 
   inputs = {
-    region = each.value
+    region       = var.region
+    # default_tags = var.default_tags
   }
 
   providers = {
-    aws    = provider.aws.configurations[each.value]
-    random = provider.random.this
+    aws = provider.aws.configurations
   }
 }
