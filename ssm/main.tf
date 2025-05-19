@@ -1,7 +1,7 @@
-resource "local_file" "foo" {
-  content  = join(",", [for key, value in local.default_tags : "${key}=${value}"])
-  filename = "${path.module}/foo.bar"
-}
+# resource "local_file" "foo" {
+#   content  = join(",", [for key, value in local.default_tags : "${key}=${value}"])
+#   filename = "${path.module}/foo.bar"
+# }
 
 locals {
   default_tags = {
