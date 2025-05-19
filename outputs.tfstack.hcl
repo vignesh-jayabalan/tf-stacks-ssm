@@ -1,5 +1,5 @@
-output "lambda_urls" {
-  type        = list(string)
+output "map_to_list_keys" {
+  type        = string
   description = "functions"
-  value       = ["a", "b"]
+  value       = component.ssm.outputs.map_output
 }
