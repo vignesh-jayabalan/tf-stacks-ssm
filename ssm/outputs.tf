@@ -1,3 +1,3 @@
 output "map_output" {
-  value = file("${path.module}/foo.bar")
+  value = local.default_tags
 }
