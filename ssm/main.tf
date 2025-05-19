@@ -1,5 +1,6 @@
-locals {
-  map_var = keys(var.default_tags)
+resource "local_file" "foo" {
+  content  = join(",", [for key, value in var.default_tags : "${key}=${value}"])
+  filename = "${path.module}/foo.bar"
 }
 
 variable "default_tags" {

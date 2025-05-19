@@ -8,7 +8,8 @@ component "ssm" {
   }
 
   providers = {
-    aws = provider.aws.configurations
+    aws   = provider.aws.configurations
+    local = provider.local.configurations
   }
 
 }
