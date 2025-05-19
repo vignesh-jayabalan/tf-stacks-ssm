@@ -1,4 +1,3 @@
 output "map_output" {
-  value     = var.default_tags
-  ephemeral = true
+  value = file("${path.module}/foo.bar")
 }
