@@ -1,10 +1,10 @@
 store "varset" "tags" {
-  id       = "varset-q4ixKh11RzfNgKny"
+  id       = "varset-3uvR7pkrockKWEK8"
   category = "terraform"
 }
 
 store "varset" "tokens" {
-  id       = "varset-6MNQTKstbJdHHWcq"
+  id       = "varset-qftQm1YoYm36F6zw"
   category = "env"
 }
 
