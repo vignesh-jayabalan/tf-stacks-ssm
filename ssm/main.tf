@@ -6,6 +6,7 @@ resource "local_file" "foo" {
 variable "default_tags" {
   description = "A map of default tags to apply to all AWS resources"
   type        = map(string)
+  ephemeral   = true
   default = {
     "name" = "value"
   }
