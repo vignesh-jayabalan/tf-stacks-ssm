@@ -6,11 +6,11 @@ variable "region" {
   default = "us-east-1"
 }
 
-# variable "default_tags" {
-#   description = "A map of default tags to apply to all AWS resources"
-#   type        = map(string)
-#   # ephemeral   = true
-# }
+variable "default_tags" {
+  description = "A map of default tags to apply to all AWS resources"
+  type        = map(string)
+  # ephemeral   = true
+}
 
 # variable "identity_token" {
 #   type      = string
