@@ -1,4 +1,4 @@
-resource "aws_ssm_parameter" "example" { 
+resource "aws_ssm_parameter" "example" {
   name        = "/example/app/api_key"
   description = "API key for example app"
   type        = "SecureString"
@@ -11,6 +11,7 @@ resource "aws_ssm_parameter" "example" {
 variable "default_tags" {
   description = "A map of default tags to apply to all AWS resources"
   type        = map(string)
+  ephemeral   = true
   default = {
     "name" = "value"
   }
