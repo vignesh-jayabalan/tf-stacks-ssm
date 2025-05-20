@@ -1,19 +1,17 @@
-# resource "local_file" "foo" {
-#   content  = join(",", [for key, value in local.default_tags : "${key}=${value}"])
-#   filename = "${path.module}/foo.bar"
-# }
 
-locals {
-  default_tags = {
-    "name-1" = "value-1"
-    "name-2" = "value-2"
-  }
+resource "aws_secretsmanager_secret" "example" {
+  name = "vjb_ephemeral_test"
+}
+resource "aws_secretsmanager_secret_version" "example" {
+  secret_id                = aws_secretsmanager_secret.example.id
+  secret_string_wo         = jsonencode(var.default_tags)
+  secret_string_wo_version = 1
 }
 
 variable "default_tags" {
   description = "A map of default tags to apply to all AWS resources"
   type        = map(string)
-  # ephemeral   = true
+  ephemeral   = true
   default = {
     "name" = "value"
   }
