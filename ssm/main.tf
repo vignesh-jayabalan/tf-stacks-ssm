@@ -11,7 +11,4 @@ resource "aws_secretsmanager_secret_version" "example" {
 variable "default_tags" {
   description = "A map of default tags to apply to all AWS resources"
   ephemeral   = true
-  default = {
-    "name" = "value"
-  }
 }
