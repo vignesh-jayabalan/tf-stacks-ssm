@@ -4,11 +4,15 @@ resource "aws_secretsmanager_secret" "example" {
 }
 resource "aws_secretsmanager_secret_version" "example" {
   secret_id                = aws_secretsmanager_secret.example.id
-  secret_string_wo         = var.default_tags
+  secret_string_wo         = jsonencode(var.default_tags)
   secret_string_wo_version = 1
 }
 
 variable "default_tags" {
   description = "A map of default tags to apply to all AWS resources"
+  type        = map(string)
   ephemeral   = true
+  default = {
+    "name" = "value"
+  }
 }
